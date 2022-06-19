@@ -11,7 +11,7 @@ const Heading = () => {
   ];
   return (
     <>
-      <div className="flex-col justify-start py-6">
+      <div className="container mx-auto">
         <NavigationBar />
         <PagesBreadCrumb data={titles} />
       </div>

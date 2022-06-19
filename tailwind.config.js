@@ -3,14 +3,19 @@ module.exports = {
   mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    screens: {
-      'xs': '275px',
-      ...defaultTheme.screens,
-    },
     extend: {
-      backgroundColor:{
-        'header-gray': '#F1F1F1' ,
+      backgroundColor: {
+        'header-gray': '#F1F1F1',
       },
+    },
+    container: {
+      padding: {
+        DEFAULT: '2rem',
+        md: "0rem",
+        lg: '4rem',
+        '2xl': '0rem',
+      },
+
     },
   },
   variant: {},

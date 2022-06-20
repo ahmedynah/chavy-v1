@@ -58,10 +58,16 @@ export default function NavigationBar() {
     <Popover className=" relative bg-white">
       <div className=" mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div className="flex md:w-2/3   ">
+          <div className="-mr-2 -my-2 lg:hidden">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span className="sr-only">Open menu</span>
+              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
+          </div>
+          <div className="flex lg:w-4/5 2xl:w-2/3">
             <a href="/">
 
-              <svg xmlns="http://www.w3.org/2000/svg" width="154.448" height="49.977" viewBox="0 0 154.448 49.977">
+              <svg xmlns="http://www.w3.org/2000/svg" width="144.448" height="39.977" viewBox="0 0 154.448 49.977">
                 <g id="Group_270" data-name="Group 270" transform="translate(-792.835 -526.781)">
                   <g id="Group_265" data-name="Group 265" transform="translate(792.835 539.418)">
                     <path id="Path_168" data-name="Path 168" d="M801.038,656.225c-1.105-8.474,5.526-12.6,10.194-13.2a17.576,17.576,0,0,0-4.416-.518,12.892,12.892,0,0,0-5.426,1.165,14,14,0,0,0-4.442,3.185,15.478,15.478,0,0,0-3,4.686,14.608,14.608,0,0,0-1.111,5.671,13.284,13.284,0,0,0,1.035,5.2,13.914,13.914,0,0,0,2.8,4.3,13.29,13.29,0,0,0,4.189,2.926,12.433,12.433,0,0,0,5.148,1.087,12.117,12.117,0,0,0,8.252-2.926A12.718,12.718,0,0,1,801.038,656.225Z" transform="translate(-792.835 -642.503)" fill="#ff4e00" />
@@ -88,22 +94,22 @@ export default function NavigationBar() {
               </svg>
 
             </a>
-            <div className='hidden md:flex mr-6'>
+            <div className='hidden lg:flex mr-3 xl:mr-6'>
 
-              <div className=" md:ml-6  md:border-l md:border-gray-200	flex  items-center  justify-center">
-                <a href='#' className="ml-4 hover:text-gray-900 text-lg active:text-blue-600">الرئيسية</a>
+              <div className=" ml-2 xl:ml-6  md:border-l md:border-gray-200	flex  items-center  justify-center">
+                <a href='#' className="ml-4 hover:text-gray-900 text-sm xl:text-lg active:text-blue-600">الرئيسية</a>
               </div>
-              <div className=" md:ml-6  md:border-l md:border-gray-200	flex  items-center  justify-center">
-                <a href='#' className="ml-4 hover:text-gray-900 text-lg active:text-blue-600">المدونة</a>
+              <div className=" ml-2 xl:ml-6  md:border-l md:border-gray-200	flex  items-center  justify-center">
+                <a href='#' className="ml-4 hover:text-gray-900 text-sm xl:text-lg active:text-blue-600">المدونة</a>
               </div>
-              <div className=" md:ml-6 md:border-l md:border-gray-200	flex  items-center  justify-center">
-                <a href='#' className="ml-4 hover:text-gray-900 text-lg active:text-blue-600">تسوق</a>
+              <div className=" ml-2 xl:ml-6 md:border-l md:border-gray-200	flex  items-center  justify-center">
+                <a href='#' className="ml-4 hover:text-gray-900 text-sm xl:text-lg active:text-blue-600">تسوق</a>
               </div>
-              <div className=" md:ml-6  md:border-l md:border-gray-200	flex  items-center  justify-center">
-                <a href='#' className="ml-4 hover:text-gray-900 text-lg active:text-blue-600">من نحن</a>
+              <div className=" ml-2 xl:ml-6  md:border-l md:border-gray-200	flex  items-center  justify-center">
+                <a href='#' className="ml-4 hover:text-gray-900 text-sm xl:text-lg active:text-blue-600">من نحن</a>
               </div>
-              <div className=" md:ml-6 flex items-center justify-center">
-                <a href='#' className="ml-4 hover:text-gray-900 text-lg active:text-blue-600">اتصل بنا</a>
+              <div className=" ml-2 xl:ml-6 flex items-center justify-center">
+                <a href='#' className="ml-4 hover:text-gray-900 text-sm xl:text-lg active:text-blue-600">اتصل بنا</a>
               </div>
 
               <form className="lg:flex items-center hidden">
@@ -112,29 +118,25 @@ export default function NavigationBar() {
                   <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
                   </div>
-                  <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5     dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="بحث" required="" />
+                  <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="بحث" required="" />
                 </div>
               </form>
 
             </div>
 
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span className="sr-only">Open menu</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
-            </Popover.Button>
-          </div>
-
-          <div className="hidden md:flex md:w-1/3 items-center justify-end md:flex-1 ">
-
+          <div className="flex lg:w-1/5 2xl:w-1/3 items-center justify-end md:flex-1 ">
+            <button type="submit" class="lg:hidden p-2.5 ml-2 text-sm font-medium text-gray-400 rounded-lg border"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
             <a
               href="#"
-              className="space-x-2 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-800 hover:bg-gray-700"
+              className="space-x-2 whitespace-nowrap inline-flex items-center justify-center px-1 py-1 md:px-4 md:py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-800 hover:bg-gray-700"
             >
               <i className="fa badge fa-lg" value={5}></i>
-              <MdOutlineShoppingCart className="text-lg" />
-              السلة
+              <MdOutlineShoppingCart className="text-lg " />
+              <span className=" hidden md:inline">
+                السلة
+              </span>
+
             </a>
           </div>
         </div>
@@ -149,7 +151,7 @@ export default function NavigationBar() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 z-50 transition transform origin-top-right md:hidden">
+        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 z-50 transition transform origin-top-right lg:hidden">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">

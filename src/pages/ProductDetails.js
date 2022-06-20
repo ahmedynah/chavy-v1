@@ -64,7 +64,7 @@ const ProductDes = () => {
   return (
     <div className="w-full">
       <h3 className="mb-3 text-gray-400 font-semibold text-xl">معلومات عامة</h3>
-      <p className="text-justify h-4/5 overflow-auto flex-shrink text-ellipsis xs:text-normal xl:text-lg mb-5">
+      <p className="text-justify h-4/5 flex-shrink text-ellipsis xs:text-base xl:text-lg mb-5">
         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى ...
 
       </p>
@@ -133,10 +133,10 @@ const Offer = () => {
 
 const Details = () => {
   return (
-    <div className="w-full overflow-y-auto">
+    <div className="w-full">
       <h3 className="font-bold xs:text-lg md:text-3xl">شرح التفاصيل</h3>
       <div className="h-0.5 bg-gray-300 w-full my-4"></div>
-      <p>
+      <p className="text-justify">
         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
         النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا ...النص أو العديد من
         النصوص الأخرى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
@@ -163,15 +163,7 @@ const ProductDetails = () => {
   })
   return (
     <div className="container mx-auto xs:p-3 md-p-0">
-      {/* <div className="flex flex-wrap ">
-        <div className="xs:w-full md:w-3/5 xs:mb-4 md:mb-0 flex">
-          
-
-        </div>
-        <div className="xs:w-full md:w-2/5 ">
-          
-        </div>
-      </div> */}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         <div dir='ltr' className=" h-fit">
           <Carousel
@@ -214,11 +206,11 @@ const ProductDetails = () => {
       </div>
       <div className="flex flex-col mt-10 w-full">
         <h2 className="mb-4 font-bold xs:text-lg md:text-2xl">منتجات مشابهة</h2>
-        <Slider comp={data.map(el => <ProductCard id={el.id} link={el.image} />)} />
+        <Slider rows="2" autoPlay={false} comp={data.map(el => <ProductCard id={el.id} link={el.image} />)} />
       </div>
-      <div className="flex flex-col mt-60  pb-2  w-full">
+      <div className="flex flex-col mt-24  pb-2  w-full">
         <h2 className="mb-4 font-bold xs:text-lg md:text-2xl">أراء العملاء</h2>
-        <Slider comp={data.map(el => <CustomerOpinion id={el.id} link={el.image} />)} />
+        <Slider type="opinion" autoPlay={true} comp={data.map(el => <CustomerOpinion id={el.id} link={el.image} />)} />
       </div>
       <div className="h-96 mt-32 border-t-2"></div>
     </div>

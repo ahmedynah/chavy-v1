@@ -106,7 +106,7 @@ export default function NavigationBar() {
                 <a href='#' className="ml-4 hover:text-gray-900 text-lg active:text-blue-600">اتصل بنا</a>
               </div>
 
-              <form className="flex items-center">
+              <form className="lg:flex items-center hidden">
                 <label for="simple-search" className="sr-only">Search</label>
                 <div className="relative w-full">
                   <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">

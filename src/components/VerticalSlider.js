@@ -21,12 +21,15 @@ const FirstSlide = () => {
         backgroundSize: "cover",
     }}
     >
-      <p className="text-right my-3">نص يمكن استبدالة</p>
-      <h1 className="w-2/5 text-justify font-bold text-6xl">
+      <div className="mr-10 md:mr-24 w-full">
+
+      <p className="text-right my-3 text-[20px] md:text-[24px] font-semibold">نص يمكن استبدالة</p>
+      <h1 className="text-right font-bold w-3/5 text-[32px] md:text-[80px]">
         هذا النص
-        <br /> يمكن استبدالة
+        يمكن استبدالة
       </h1>
-      <div className="bg-transparent hover:scale-[1.02] cursor-pointer hover:text-white hover:bg-gradient-to-br from-slate-100 via-transparent to-neutral-200 border-2 text-right text-3xl w-fit p-2 mt-10">اكتشف الان</div>
+      <div className="bg-transparent hover:scale-[1.02] cursor-pointer hover:text-white hover:bg-gradient-to-br from-slate-100 via-transparent to-neutral-200 border-2 p-2 mt-10 text-center w-fit font-semibold text-[20px] md:text-[24px]">اكتشف الان</div>
+      </div>
     </div>
   );
 };

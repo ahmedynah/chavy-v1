@@ -7,7 +7,6 @@ import ProductCard from "../components/ProductCard";
 import Ratings from "../components/RatingStars";
 import { data } from "../components/shared";
 import Slider from "../components/Slider";
-import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 
 // import Slider from "react-slick";
@@ -172,10 +171,10 @@ const Details = () => {
 const ProductsGrid = () => {
   return (
     <>
-        {data.slice(0, 4).map((el) => {
-          return <ProductCard id={el.id} link={el.image} />;
-        })}
-        </>
+      {data.slice(0, 4).map((el) => {
+        return <ProductCard id={el.id} link={el.image} />;
+      })}
+    </>
   );
 };
 
@@ -191,15 +190,6 @@ const ProductDetails = () => {
     };
   });
 
-  const xxl = useMediaQuery({
-    query: "(min-width: 1224px)",
-  });
-  const lg = useMediaQuery({
-    query: "(min-width: 1024px)",
-  });
-  const md = useMediaQuery({
-    query: "(min-width: 768px)",
-  });
   return (
     <div className="container mx-auto py-3 px-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">

@@ -137,6 +137,7 @@ const Offer = () => {
               width="70px"
               src={require("../assets/images/tabby.png")}
               alt="taddy"
+              className="ml-auto"
             />
           </div>
           <p className="underline hover:text-blue-400 font-semibold text-sm my-1 hover: cursor-pointer">
@@ -147,7 +148,15 @@ const Offer = () => {
     </div>
   );
 };
-
+const Heading = (props) => {
+  return (
+    <h2
+      className={`mb-4 w-full text-center md:text-right font-bold text-[24px] md:text-[45px] ${props.className}`}
+    >
+      {props.text}
+    </h2>
+  );
+};
 const Details = () => {
   return (
     <div className="w-full">
@@ -180,15 +189,13 @@ const ProductsGrid = () => {
 
 const ProductDetails = () => {
   const [dims, setDims] = useState(window.innerHeight);
-  const [rows, rowsSet] = useState(1);
   useEffect(() => {
-    window.addEventListener("resize", (e) => setDims(window.innerWidth));
-    dims > 560 ? rowsSet(1) : rowsSet(2);
+    window.addEventListener("resize", () => setDims(window.innerWidth));
     console.log("dims= ", dims);
     return (_) => {
-      window.removeEventListener("resize", (e) => setDims(window.innerWidth));
+      window.removeEventListener("resize", () => setDims(window.innerWidth));
     };
-  });
+  }, [dims]);
 
   return (
     <div className="container mx-auto py-3 px-auto">
@@ -200,7 +207,7 @@ const ProductDetails = () => {
             width="750px"
             height="500px"
             // captionStyle={captionStyle}
-            radius="10px"
+            radius="0px"
             // slideNumber={true}
             // slideNumberStyle={slideNumberStyle}
             // captionPosition="bottom"
@@ -232,14 +239,13 @@ const ProductDetails = () => {
         <Details />
       </div>
       <div className="flex flex-col mt-10 w-full">
-        <h2 className="mb-4 w-full text-center md:text-right font-bold text-[24px] md:text-[45px]">
-          منتجات مشابهة
-        </h2>
+        <Heading text="منتجات مشابهه" className="md:hidden" />
         <div className="hidden md:block">
           <Slider
             rows={1}
-            slides={dims > 1150? 3 : 2}
+            slides={dims > 1150 ? 3 : 2}
             autoPlay={false}
+            header={<Heading text="منتجات مشابهه" />}
             comp={data.map((el) => (
               <ProductCard id={el.id} link={el.image} />
             ))}
@@ -250,12 +256,10 @@ const ProductDetails = () => {
         </div>
       </div>
       <div className="flex flex-col mt-24  pb-2  w-full">
-        <h2 className="mb-4 w-full text-center md:text-right font-bold text-[24px] md:text-[45px]">
-          أراء العملاء
-        </h2>
         <Slider
           type="opinion"
           slides={dims > 768 ? 3 : 1}
+          header={<Heading text="أراء العملاء" className="relative -left-6 md:left-0"/>}
           autoPlay={true}
           comp={data.map((el) => (
             <CustomerOpinion id={el.id} link={el.image} />

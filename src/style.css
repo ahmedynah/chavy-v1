@@ -24,14 +24,23 @@
 .badge:after {
   content: attr(value);
   font-size: 12px;
+  font-weight: bold;
   color: #fff;
   background: red;
   border-radius: 50%;
-  padding: 0 5px;
+  padding: 0px 7px;
   position: relative;
   left: -8px;
-  top: -10px;
+  top: -9px;
   opacity: 0.9;
+}
+@media screen and (max-width: 720px ) {
+.badge:after{
+  font-size: 10px;
+  padding: 0px 7px;
+  top:-7px
+}
+  
 }
 
 .text-ellipsis--3 {

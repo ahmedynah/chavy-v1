@@ -16,7 +16,7 @@ const Ratings = () => {
           // halfIcon={<i className="fa fa-star-half-alt"></i>}
           fullIcon={<HiStar />}
         />
-        <span className="-mb-1 underline-offset-1 underline">{number} rater</span>
+        <span className="-mb-1 underline-offset-1 underline cursor-pointer">{number} مقيم للمنتج</span>
       </div>
     );
   };

@@ -27,21 +27,26 @@ export default function Slider(props) {
     console.log("in")
   };
   useEffect(() => {
-    
+    console.log(props.header)
     console.log("rows= ",props.rows)
 
   },);
   return (
     <>
+    <div className="flex md:justify-between items-center">
+      <>
+      {props.header}
+      </>
       <div className="flex w-fit gap-3 mr-auto my-5 text-[30px]">
         <div className="h-50 w-50" onClick={() => prevSlide()}>
           <BsChevronRight className="cursor-pointer" />
         </div>
-
+          
         <div className="h-50 w-50" onClick={() => nextSlide()}>
           <BsChevronLeft className="cursor-pointer" />
         </div>
       </div>
+    </div>
       <Swiper
         onSwiper={setSwiperRef}
         cssMode={true}
@@ -57,14 +62,19 @@ export default function Slider(props) {
         }}
         modules={[Grid, Pagination, Autoplay]}
         autoplay={props.autoPlay}
-        style={{height: "600px"}}
+        style={{ height:"fit content"}}
         
 
         // className="w-full flex gap-4 "
       >
         {comps.map((el) => {
           return <SwiperSlide style={{
-            marginLeft: "0px"
+            marginLeft: "0px",
+            display:"flex",
+            flexDirection:"column",
+            justifyContent: "start",
+            height:"fit-content",
+            paddingBottom:"42px",
           }}>{el}</SwiperSlide>;
         })}
       </Swiper>

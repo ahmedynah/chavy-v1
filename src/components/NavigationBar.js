@@ -57,7 +57,7 @@ export default function NavigationBar() {
   return (
     <Popover className=" relative bg-white">
       <div className=" mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-6 h-[100px]">
           <div className="-mr-2 -my-2 lg:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
@@ -125,11 +125,11 @@ export default function NavigationBar() {
             </div>
 
           </div>
-          <div className="flex lg:w-1/5 2xl:w-1/3 items-center justify-end md:flex-1 ">
-            <button type="submit" class="lg:hidden p-2.5 ml-2 text-sm font-medium text-gray-400 rounded-lg border"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+          <div className="flex h-full lg:w-1/5 2xl:w-1/3 items-center justify-end md:flex-1">
+            <button type="submit" class="lg:hidden p-2.5 h-full ml-2 text-sm font-medium text-gray-400 rounded-lg border"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
             <a
               href="#"
-              className="space-x-2 whitespace-nowrap inline-flex items-center justify-center px-1 py-1 md:px-4 md:py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-800 hover:bg-gray-700"
+              className="space-x-2 whitespace-nowrap inline-flex h-full items-center justify-center px-1 py-1 md:px-4 md:py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-800 hover:bg-gray-700"
             >
               <i className="fa badge fa-lg" value={5}></i>
               <MdOutlineShoppingCart className="text-lg " />

@@ -20,34 +20,36 @@ export default function Slider(props) {
   const type = !!props.type && props.type;
   const nextSlide = () => {
     swiperRef.slideNext(100);
+    console.log("in")
   };
   const prevSlide = () => {
     swiperRef.slidePrev(100);
+    console.log("in")
   };
-  const [slides, slidesSet] = useState(3);
   useEffect(() => {
-    console.log(props.rows);
-    slidesSet(window.innerWidth < 650 && type == "opinion" ? 1 : 3);
-  }, []);
+    
+    console.log("rows= ",props.rows)
+
+  },);
   return (
     <>
       <div className="flex w-fit gap-3 mr-auto my-5 text-[30px]">
-        <div className="h-50 w-50" onClick={() => nextSlide()}>
+        <div className="h-50 w-50" onClick={() => prevSlide()}>
           <BsChevronRight className="cursor-pointer" />
         </div>
 
-        <div className="h-50 w-50" onClick={() => prevSlide()}>
+        <div className="h-50 w-50" onClick={() => nextSlide()}>
           <BsChevronLeft className="cursor-pointer" />
         </div>
       </div>
       <Swiper
         onSwiper={setSwiperRef}
         cssMode={true}
-        slidesPerView={slides}
+        slidesPerView={props.slides}
         spaceBetween={20}
         // navigation={true}
         grid={{
-          rows: parseInt(props.rows) ,
+          rows: props.rows ,
           fill: "rows"
         }}
         pagination={{

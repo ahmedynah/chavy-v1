@@ -7,7 +7,7 @@ const ProductCard = (props) => {
   return (
     <div
       
-      className="w-full h-[290px] md:h-[560px] xl:h-[670px] border rounded-md  flex flex-col gap-3 justify-between"
+      className="w-full h-[290px] md:h-[560px] xl:h-[670px] border  flex flex-col gap-3 justify-between"
     >
       <Link
       to="/details/5"

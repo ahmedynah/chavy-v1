@@ -57,11 +57,15 @@ export default function Slider(props) {
         }}
         modules={[Grid, Pagination, Autoplay]}
         autoplay={props.autoPlay}
+        style={{height: "600px"}}
+        
 
         // className="w-full flex gap-4 "
       >
         {comps.map((el) => {
-          return <SwiperSlide>{el}</SwiperSlide>;
+          return <SwiperSlide style={{
+            marginLeft: "0px"
+          }}>{el}</SwiperSlide>;
         })}
       </Swiper>
     </>

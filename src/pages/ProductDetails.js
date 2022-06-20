@@ -238,7 +238,7 @@ const ProductDetails = () => {
         <div className="hidden md:block">
           <Slider
             rows={1}
-            slides={3}
+            slides={dims > 1150? 3 : 2}
             autoPlay={false}
             comp={data.map((el) => (
               <ProductCard id={el.id} link={el.image} />

@@ -1,18 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
-import { Popover, Transition } from '@material-tailwind/react';
+import { Popover, Transition } from '@headlessui/react'
 import {
-
+  BookmarkAltIcon,
+  CalendarIcon,
   ChartBarIcon,
   CursorClickIcon,
   MenuIcon,
-
+  PhoneIcon,
+  PlayIcon,
   RefreshIcon,
   ShieldCheckIcon,
+  SupportIcon,
   ViewGridIcon,
   XIcon,
-} from '@material-tailwind/react'
+} from '@heroicons/react/outline'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import { MdOutlineShoppingCart } from "react-icons/md";
 const solutions = [
   {

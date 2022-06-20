@@ -10,6 +10,12 @@ module.exports = {
       backgroundColor: {
         'header-gray': '#F1F1F1',
       },
+      lineClamp: {
+        7: '7',
+        8: '8',
+        9: '9',
+        10: '10',
+      },
     colors:{
       'plain-gray': "#707070",
     },
@@ -24,6 +30,10 @@ module.exports = {
 
     },
   },
-  variant: {},
-  plugins: [],
+  variant: {
+    lineClamp: ['responsive', 'hover'],
+  },
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

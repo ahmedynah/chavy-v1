@@ -5,7 +5,7 @@ import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import "../style.css";
 const CustomerOpinion = (props) => {
   return (
-    <div className="w-full md:h-[360px] xl:h-[570px] border rounded-md  flex flex-col gap-1 md:gap-3 justify-start">
+    <div className="w-full md:h-[fit] border rounded-md  flex flex-col gap-1 md:gap-3 justify-start">
       <div
         className="w-full min-h-[186px] h-1/2 max-h-[360px] overflow-hidden"
         style={{
@@ -32,7 +32,7 @@ const CustomerOpinion = (props) => {
         </h4>
         <div className="w-full max-h-[160px] flex flex-col gap-2">
           <ImQuotesRight className="block self-start" />
-          <p className="text-[16px] md:text-[20px] h-full text-shrinking">
+          <p className="text-[14px] md:text-[16px] md:h-[50px] lg:h-[70px] md:line-clamp-1 xl:line-clamp-2 text-ellipsis">
             هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
             النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذاهذا النص هو مثال
             لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد

@@ -130,9 +130,9 @@ export default function NavigationBar() {
 
             <a
               href="#"
-              className="space-x-2 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-800 hover:bg-gray-700"
+              className="space-x-2  whitespace-nowrap flex  items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-800 hover:bg-gray-700"
             >
-              <i className="fa badge fa-lg" value={5}></i>
+              <i className="fa badge w-[24px] h-[24px]" value={5}></i>
               <MdOutlineShoppingCart className="text-lg" />
               السلة
             </a>

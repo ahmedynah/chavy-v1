@@ -129,11 +129,11 @@ const Offer = () => {
       </div>
       <PurchaseControls />
       <div>
-        <div className="flex w-full flex-col md:flex-row md:flex-wrap lg:w-2/3 justify-between items-start gap-3 md:items-center">
-          <span className="font-bold">
-            أو قسمها على 4 دفعات شهرية بقيمة 40 ر.س
-          </span>
-          <div className="w-full">
+        <div className="flex w-full flex-col md:flex-row md:flex-wrap justify-between items-start gap-3 md:items-center">
+          <div className="w-full flex flex-col md:flex-row gap-5 justify-between">
+            <span className="font-bold">
+              أو قسمها على 4 دفعات شهرية بقيمة 40 ر.س
+            </span>
             <img
               width="70px"
               src={require("../assets/images/tabby.png")}
@@ -154,7 +154,7 @@ const Details = () => {
     <div className="w-full">
       <h3 className="font-bold xs:text-lg md:text-3xl">شرح التفاصيل</h3>
       <div className="h-0.5 bg-gray-300 w-full my-4"></div>
-      <p className="text-justify">
+      <p className="text-justify line-clamp-3 text-ellipsis md:line-clamp-4">
         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
         النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا ...النص أو العديد من
         النصوص الأخرى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
@@ -172,10 +172,10 @@ const Details = () => {
 const ProductsGrid = () => {
   return (
     <>
-        {data.slice(0, 4).map((el) => {
-          return <ProductCard id={el.id} link={el.image} />;
-        })}
-        </>
+      {data.slice(0, 4).map((el) => {
+        return <ProductCard id={el.id} link={el.image} />;
+      })}
+    </>
   );
 };
 
@@ -242,7 +242,9 @@ const ProductDetails = () => {
         <Details />
       </div>
       <div className="flex flex-col mt-10 w-full">
-        <h2 className="mb-4 w-full text-center md:text-right font-bold text-[24px] md:text-[45px]">منتجات مشابهة</h2>
+        <h2 className="mb-4 w-full text-center md:text-right font-bold text-[24px] md:text-[45px]">
+          منتجات مشابهة
+        </h2>
         <div className="hidden md:block">
           <Slider
             rows={1}
@@ -254,12 +256,13 @@ const ProductDetails = () => {
           />
         </div>
         <div className="md:hidden grid gap-4  grid-cols-2  grid-rows-2 grid-flow-row-dense w-full mx-auto">
-
           <ProductsGrid />
         </div>
       </div>
       <div className="flex flex-col mt-24  pb-2  w-full">
-        <h2 className="mb-4 w-full text-center md:text-right font-bold text-[24px] md:text-[45px]">أراء العملاء</h2>
+        <h2 className="mb-4 w-full text-center md:text-right font-bold text-[24px] md:text-[45px]">
+          أراء العملاء
+        </h2>
         <Slider
           type="opinion"
           slides={dims > 768 ? 3 : 1}

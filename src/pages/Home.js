@@ -5,6 +5,14 @@ import VerticalSlider from "../components/VerticalSlider";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { data } from "../components/shared";
 import ProductCard from "../components/ProductCard";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel
+} from "@material-tailwind/react";
+import { useState } from "react";
 const BannerColumns = () => {
   return bannerColData.map((el) => {
     return (
@@ -31,22 +39,42 @@ const CatNav = () => {
     );
   });
 };
+const tabsData = [
+  {
+    label: "رجالي",
+    value: 1,
+  },
+  {
+    label: "حريمي",
+    value: 2
+  },
 
+  {
+    label: "زوجي",
+    value: 3,
+  },
+
+  {
+    label: "مخفض",
+    value: 4,
+  },
+];
 const ItemsGrid = () => {
   return (
-      data.map((el, index) => {
-        if ( index < 6)
+    data.map((el, index) => {
+      if (index < 6)
         return (
-            <ProductCard link={el.image} />
+          <ProductCard link={el.image} />
         )
-        else 
+      else
         return (<></>)
-        
-      })
+
+    })
   );
 };
 
 const HomePage = () => {
+  const [selectedTab, setSelectedTab] = useState(1)
   return (
     <div className="w-full flex items-center flex-col h-screen">
       <div className="flex w-full h-4/6 border-2">
@@ -63,14 +91,25 @@ const HomePage = () => {
           <h3 className="text-[24px] md:text-[60px] text-plain-gray font-bold mb-10">
             افضل المبيعات
           </h3>
-          <ul className="flex w-full list-none justify-center items-center gap-16 border-b-2 pb-6">
-            <CatNav />
-          </ul>
+          <Tabs value={1}>
+            <TabsHeader className="my-5 py-2 w-2/3 mx-auto border-b border-gray-300 rounded-none">
+              {tabsData.map(({ label, value }) => (
+                <Tab onClick={() => setSelectedTab(value)} className={selectedTab === value ? 'font-semibold text-orange-600' : 'font-semibold'} key={value} value={value}>
+                  {label}
+                </Tab>
+              ))}
+            </TabsHeader>
+            <TabsBody >
+              {tabsData.map(({ value }) => (
+                <TabPanel key={value} value={value}>
+                  <div className="grid gap-4 md:gap-y-6 md:gap-0 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row  w-full mx-auto">
+                    <ItemsGrid />
+                  </div>
+                </TabPanel>
+              ))}
+            </TabsBody>
+          </Tabs>
 
-          <div className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row  w-full mx-auto">
-            {/* <MultiRowSwiper data={data}/> */}
-            <ItemsGrid />
-          </div>
 
           <div className="h-52 md:h-72 w-full flex flex-col justify-center items-center bg-[#B2B2B2] my-16">
             <p className="text-white text-[20px] md:text-[60px] text-center w-full">
@@ -83,17 +122,28 @@ const HomePage = () => {
           <h3 className="text-[24px] md:text-[60px] text-plain-gray font-bold mb-10">
             افضل المبيعات
           </h3>
-          <ul className="flex w-full list-none justify-center items-center gap-16 border-b-2 pb-6">
-            <CatNav />
-          </ul>
-          <div className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row-dense w-full mx-auto">
-            {/* <MultiRowSwiper data={data}/> */}
-            <ItemsGrid />
-          </div>
+          <Tabs value={1}>
+            <TabsHeader className="my-5 py-2 w-2/3 mx-auto border-b border-gray-300 rounded-none">
+              {tabsData.map(({ label, value }) => (
+                <Tab onClick={() => setSelectedTab(value)} className={selectedTab === value ? 'font-semibold text-orange-600' : 'font-semibold'} key={value} value={value}>
+                  {label}
+                </Tab>
+              ))}
+            </TabsHeader>
+            <TabsBody >
+              {tabsData.map(({ value }) => (
+                <TabPanel key={value} value={value}>
+                  <div className="grid gap-4 md:gap-y-6 md:gap-0 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row  w-full mx-auto">
+                    <ItemsGrid />
+                  </div>
+                </TabPanel>
+              ))}
+            </TabsBody>
+          </Tabs>
           <div className="h-96 mt-32 w-full border-t-2"></div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

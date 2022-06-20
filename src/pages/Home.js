@@ -92,7 +92,7 @@ const HomePage = () => {
             افضل المبيعات
           </h3>
           <Tabs value={1}>
-            <TabsHeader className="my-5 py-2 w-2/3 mx-auto border-b border-gray-300 bg-slate-100">
+            <TabsHeader className="my-5 py-2 w-2/3 mx-auto border-b border-gray-300 rounded-none">
               {tabsData.map(({ label, value }) => (
                 <Tab onClick={() => setSelectedTab(value)} className={selectedTab === value ? 'font-semibold text-orange-600' : 'font-semibold'} key={value} value={value}>
                   {label}
@@ -122,13 +122,24 @@ const HomePage = () => {
           <h3 className="text-[24px] md:text-[60px] text-plain-gray font-bold mb-10">
             افضل المبيعات
           </h3>
-          <ul className="flex w-full list-none justify-center items-center gap-16 border-b-2 pb-6">
-            <CatNav />
-          </ul>
-          <div className="grid gap-4 md:gap-y-6 md:gap-0 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row-dense w-full mx-auto">
-            {/* <MultiRowSwiper data={data}/> */}
-            <ItemsGrid />
-          </div>
+          <Tabs value={1}>
+            <TabsHeader className="my-5 py-2 w-2/3 mx-auto border-b border-gray-300 rounded-none">
+              {tabsData.map(({ label, value }) => (
+                <Tab onClick={() => setSelectedTab(value)} className={selectedTab === value ? 'font-semibold text-orange-600' : 'font-semibold'} key={value} value={value}>
+                  {label}
+                </Tab>
+              ))}
+            </TabsHeader>
+            <TabsBody >
+              {tabsData.map(({ value }) => (
+                <TabPanel key={value} value={value}>
+                  <div className="grid gap-4 md:gap-y-6 md:gap-0 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row  w-full mx-auto">
+                    <ItemsGrid />
+                  </div>
+                </TabPanel>
+              ))}
+            </TabsBody>
+          </Tabs>
           <div className="h-96 mt-32 w-full border-t-2"></div>
         </div>
       </div>

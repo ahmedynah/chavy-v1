@@ -7,7 +7,6 @@ import ProductCard from "../components/ProductCard";
 import Ratings from "../components/RatingStars";
 import { data } from "../components/shared";
 import Slider from "../components/Slider";
-import { useMediaQuery } from 'react-responsive'
 
 // import Slider from "react-slick";
 
@@ -152,18 +151,10 @@ const Details = () => {
 };
 
 const ProductDetails = () => {
-  const xxl = useMediaQuery({
-    query: '(min-width: 1224px)'
-  })
-  const lg = useMediaQuery({
-    query: '(min-width: 1024px)'
-  })
-  const md = useMediaQuery({
-    query: '(min-width: 768px)'
-  })
+
   return (
     <div className="container mx-auto xs:p-3 md-p-0">
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         <div dir='ltr' className=" h-fit">
           <Carousel

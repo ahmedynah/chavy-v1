@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.3",
     "@headlessui/react": "^1.6.4",
     "@heroicons/react": "^1.0.6",
     "@material-tailwind/react": "^1.0.4",

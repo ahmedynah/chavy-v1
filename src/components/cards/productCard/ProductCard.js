@@ -12,10 +12,10 @@ const ProductCard = (props) => {
   const { id, name, price_html, price, link, product } = { ...props };
 
   return (
-    <div className="flex w-full  h-[290px] md:h-[500px] border rounded-md  flex-col  justify-between">
+    <div className="flex w-full  min-h-[300px] md:h-[500px] border rounded-md  flex-col  justify-between">
       <Link
         to={`/details/${id}`}
-        className="w-full h-full overflow-hidden"
+        className="w-full min-h-[125.06px] max-h-[150px] md:max-h-full h-full overflow-hidden"
         style={{
           backgroundImage: `url(${link})`,
           backgroundSize: "cover",
@@ -24,7 +24,7 @@ const ProductCard = (props) => {
       ></Link>
       <div className="flex flex-wrap w-full p-2 md:pt-4 md:pb-0 md:pl-0  space-y-5">
         <div className="w-full flex items-center justify-between  ">
-          <h3 className="font-bold w-full text-lg lg:text-xl text-right">
+          <h3 className="font-bold w-full text-[14px] lg:text-xl text-right">
             {name}
           </h3>
           <div className="rounded-full relative pl-4 -top-16 md:top-0 bg-white h-[40px] w-[40px] flex justify-center items-center ">
@@ -43,11 +43,11 @@ const ProductCard = (props) => {
         </div>
         <div className="w-full flex md:justify-between  md:items-center md:mt-auto flex-col md:flex-row items-start ">
           <div
-            className="font-semibold self flex flex-col gap-2 xl:flex-row justify-start items-center w-full text-[14px] lg:text-[16px] text-plain-gray"
+            className="font-semibold flex flex-col gap-2 xl:flex-row justify-start items-center w-full text-[14px] lg:text-[16px] text-plain-gray"
             dangerouslySetInnerHTML={{ __html: price_html, price }}
           ></div>
           <Button
-            className="flex m-2 items-center justify-center bg-orange-600 w-full mt-2 shadow-none rounded-none"
+            className="flex md:m-2 mt-2 items-center justify-center bg-orange-600 w-full shadow-none rounded-none"
             onClick={() => {
               if (!(basket instanceof Array)) setBasket([product]);
               else {
@@ -58,7 +58,7 @@ const ProductCard = (props) => {
             }}
           >
             <HiOutlineShoppingCart className="text-white w-[20px] h-[20px] md:w-[40px] md:h-[40px] ml-2" />
-            <span className="text-[16px] md:te">أضف للعربة</span>
+            <span className="text-[14px] md:text-[20px]">أضف للعربة</span>
           </Button>
         </div>
       </div>

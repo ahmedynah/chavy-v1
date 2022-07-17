@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // function handleClick(event) {
 //   event.preventDefault();
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // }
 const BreadCrumb = (props) => {
   const data = props.data;
-  console.log(data)
+  // console.log(data)
   return (
     <nav className="bg-grey-light rounded-md w-full">
       <ol className="flex">

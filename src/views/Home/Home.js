@@ -1,18 +1,32 @@
-import { bannerColData,data } from "../../utils/constants/shared";
+import { bannerColData } from "../../utils/constants/shared";
 import { RiCustomerService2Line } from "react-icons/ri";
-import {ProductCard,VerticalSlider, CarouselForImages, AdsBlocks} from "../../components"
+import {
+  ProductCard,
+  VerticalSlider,
+  CarouselForImages,
+  AdsBlocks,
+} from "../../components";
 import {
   Tabs,
   TabsHeader,
   TabsBody,
   Tab,
-  TabPanel
+  TabPanel,
 } from "@material-tailwind/react";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import ProductContext from "../../utils/contexts/ProductsContext";
+import { WooCommerce } from "../../config/woocommerce-rest-api/woocommerce.config";
+import { Link } from "react-router-dom";
+import { useFetch } from "../../utils/index";
+import AppDataContext from "../../utils/contexts/AppDataContext";
+
 const BannerColumns = () => {
   return bannerColData.map((el) => {
     return (
-      <div className="flex justify-center items-center border p-10 max-h-48 border-gray-300 text-gray-500">
+      <div
+        key={el.title}
+        className="flex justify-center items-center border p-10 max-h-48 border-gray-300 text-gray-500"
+      >
         <RiCustomerService2Line className="m-7 text-gray-300  w-[120px] h-[120px]" />
         <div className="flex flex-col gap-6">
           <h3 className="font-bold text-black text-[16px] md:text-[20]">
@@ -25,16 +39,6 @@ const BannerColumns = () => {
   });
 };
 
-const CatNav = () => {
-  const cats = ["رجالي", "حريمي", "زوجي", "مخفض"];
-  return cats.map((el) => {
-    return (
-      <li key={el} className="hover:text-[#FF4E00] text-plain-gray">
-        <p className="text-xl font-bold cursor-pointer ">{el}</p>
-      </li>
-    );
-  });
-};
 const tabsData = [
   {
     label: "رجالي",
@@ -42,7 +46,7 @@ const tabsData = [
   },
   {
     label: "حريمي",
-    value: 2
+    value: 2,
   },
 
   {
@@ -55,22 +59,38 @@ const tabsData = [
     value: 4,
   },
 ];
+
 const ItemsGrid = () => {
-  return (
-    data.map((el, index) => {
+  const { products } = useContext(ProductContext);
+
+  return !products ? (
+    <></>
+  ) : (
+    products.map((el, index) => {
       if (index < 6)
         return (
-          <ProductCard link={el.image} />
-        )
-      else
-        return (<></>)
-
+          <ProductCard
+            key={el.id}
+            id={el.id}
+            name={el.name}
+            price_html={el.price_html}
+            price={el.price}
+            link={el.images.length === 0 ? "" : el.images[0].src}
+            product={el}
+          />
+        );
+      else return <></>;
     })
   );
 };
 
 const HomePage = () => {
-  const [selectedTab, setSelectedTab] = useState(1)
+  const { products, setProducts } = useContext(ProductContext);
+  const [selectedTab, setSelectedTab] = useState(1);
+  const { appData } = useContext(AppDataContext);
+  const [appCurrency, setAppCurrency] = useState("ر.س");
+
+  useEffect(() => {}, [appData, products]);
   return (
     <div className="w-full flex items-center flex-col h-screen">
       <div className="flex w-full h-4/6 border-2">
@@ -90,12 +110,21 @@ const HomePage = () => {
           <Tabs value={1}>
             <TabsHeader className="my-5 py-2 w-2/3 mx-auto border-b border-gray-300 rounded-none">
               {tabsData.map(({ label, value }) => (
-                <Tab onClick={() => setSelectedTab(value)} className={selectedTab === value ? 'font-semibold text-orange-600' : 'font-semibold'} key={value} value={value}>
+                <Tab
+                  onClick={() => setSelectedTab(value)}
+                  className={
+                    selectedTab === value
+                      ? "font-semibold text-orange-600"
+                      : "font-semibold"
+                  }
+                  key={value}
+                  value={value}
+                >
                   {label}
                 </Tab>
               ))}
             </TabsHeader>
-            <TabsBody >
+            <TabsBody>
               {tabsData.map(({ value }) => (
                 <TabPanel key={value} value={value}>
                   <div className="grid gap-4 md:gap-y-6 md:gap-x-3 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row  w-full mx-auto">
@@ -105,7 +134,6 @@ const HomePage = () => {
               ))}
             </TabsBody>
           </Tabs>
-
 
           <div className="h-52 md:h-72 w-full flex flex-col justify-center items-center bg-[#B2B2B2] my-16">
             <p className="text-white text-[20px] md:text-[60px] text-center w-full">
@@ -121,12 +149,21 @@ const HomePage = () => {
           <Tabs value={1}>
             <TabsHeader className="my-5 py-2 w-2/3 mx-auto border-b border-gray-300 rounded-none">
               {tabsData.map(({ label, value }) => (
-                <Tab onClick={() => setSelectedTab(value)} className={selectedTab === value ? 'font-semibold text-orange-600' : 'font-semibold'} key={value} value={value}>
+                <Tab
+                  onClick={() => setSelectedTab(value)}
+                  className={
+                    selectedTab === value
+                      ? "font-semibold text-orange-600"
+                      : "font-semibold"
+                  }
+                  key={value}
+                  value={value}
+                >
                   {label}
                 </Tab>
               ))}
             </TabsHeader>
-            <TabsBody >
+            <TabsBody>
               {tabsData.map(({ value }) => (
                 <TabPanel key={value} value={value}>
                   <div className="grid gap-4 md:gap-y-6 md:gap-3 grid-cols-2 md:grid-cols-3 grid-rows-2 grid-flow-row  w-full mx-auto">
@@ -139,7 +176,7 @@ const HomePage = () => {
           <div className="h-96 mt-32 w-full border-t-2"></div>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 

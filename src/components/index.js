@@ -11,7 +11,6 @@ import VerticalSlider from "./slider/VerticalSlider/VerticalSlider";
 import Slider from "./slider/HorizontalSlider/Slider";
 import Ratings from "./rating/RatingStars"
 import Heading from "./Header/Heading";
-
 export {
   BreadCrumb,
   CustomerOpinion,

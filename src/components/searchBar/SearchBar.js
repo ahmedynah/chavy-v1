@@ -220,7 +220,7 @@ if(!close.classList.contains("hidden")){
           <p className="text-sm font-medium  text-gray-800">Users</p>
           <div className="flex pt-5 gap-3">
             <div className>
-              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Mask%20Group.png" alt />
+              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Mask%20Group.png" alt="" />
             </div>
             <div>
               <p className="text-xs font-medium text-gray-800">CNN News Report</p>
@@ -229,7 +229,7 @@ if(!close.classList.contains("hidden")){
           </div>
           <div className="flex pt-5 gap-3">
             <div className>
-              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/2.png" alt />
+              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/2.png" alt="" />
             </div>
             <div>
               <p className="text-xs font-medium text-gray-800">Frankie Streich</p>
@@ -238,7 +238,7 @@ if(!close.classList.contains("hidden")){
           </div>
           <div className="flex pt-5 gap-3">
             <div className>
-              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/4.png" alt />
+              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/4.png" alt="" />
             </div>
             <div>
               <p className="text-xs font-medium text-gray-800">Jenny Wilson</p>
@@ -247,7 +247,7 @@ if(!close.classList.contains("hidden")){
           </div>
           <div className="flex pt-5 gap-3">
             <div className>
-              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/5.png" alt />
+              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/5.png" alt="" />
             </div>
             <div>
               <p className="text-xs font-medium text-gray-800">Arlene McCoy</p>
@@ -256,7 +256,7 @@ if(!close.classList.contains("hidden")){
           </div>
           <div className="flex pt-5 gap-3">
             <div className>
-              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3.png" alt />
+              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3.png" alt="" />
             </div>
             <div>
               <p className="text-xs font-medium text-gray-800">Sherri Gottlieb</p>
